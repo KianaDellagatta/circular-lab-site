@@ -1,5 +1,6 @@
 ---
 //@ts-nocheck
+import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
   const url =
     "https://hadmmfptlfanddlnkfpb.supabase.co/rest/v1/Events?select=*";
@@ -25,4 +26,6 @@ const { id } = Astro.params;
 const { event } = Astro.props;
 ---
 
-<h1>{event.event_title}</h1>
+<Layout>
+  <h1>{event.event_title}</h1>
+</Layout>
