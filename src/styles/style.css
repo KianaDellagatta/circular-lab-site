@@ -25,6 +25,7 @@ h1 {
 h2 {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-h2);
+  font-size: 2rem;
 }
 
 h3 {
@@ -42,4 +43,10 @@ p {
   font-family: var(--font-primary);
   font-weight: 700;
   font-size: 1rem;
+  border: solid black;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  background: none;
 }

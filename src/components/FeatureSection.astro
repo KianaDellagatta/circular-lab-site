@@ -1,8 +1,54 @@
-<div>
-  <h2></h2>
-  <p></p>
-  <h3></h3>
-  <p></p>
-  <button></button>
-  <img src="" alt="" />
+---
+import "/src/styles/style.css";
+---
+
+<div class="BackgroundFeature">
+  <h2>Events // Circular Lab</h2>
+  <p>
+    Følg med her i kalenderen og hold dig opdateret på, hvad der sker i Circular
+    Lab. Vejledninger, foredrag, events og lignende vil løbende blive lagt ind i
+    kalenderen.
+  </p>
+  <h3>Circular Lab - Repair Café</h3>
+  <p class="dato">9. April 2025 14:00-16:00</p>
+  <p>
+    Repair Café i Circular Lab hvor vi arbejder med den cirkulære
+    forretningmodel "reparation". På denne workshop har vi fokus på lapning af
+    tekstiler.
+  </p>
+  <button class="cta">SE HELE KALENDEREN</button>
+  <img src="/public/images/reparcafeposter.png" alt="" />
 </div>
+
+<style>
+  .BackgroundFeature {
+    background-color: #ff671f;
+  }
+  h2 {
+    padding: 1rem;
+  }
+  .dato {
+    padding-top: 0;
+  }
+  p {
+    padding: 1rem;
+  }
+
+  h3 {
+    padding: 1rem;
+  }
+
+  .cta {
+    display: block;
+    margin: 0 auto;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Optional: crops edges to fill container */
+    border-radius: 1rem; /* Optional: rounded corners */
+    padding: 2rem;
+  }
+</style>
