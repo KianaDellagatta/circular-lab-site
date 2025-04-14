@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font-regular: "Roboto", sans-serif;
+  --font-primary: "Roboto Condensed", sans-serif;
+  --font-weight-h1: 700;
+  --font-weight-h2: 600;
+  --font-weight-h3: 600;
+}
+
+h1 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-h1);
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-h2);
+}
+
+h3 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-h3);
+}
+
+p {
+  font-family: var(--font-regular);
+  font-weight: 400;
+}
+
+.cta {
+  font-family: var(--font-primary);
+  font-weight: 700;
+}
