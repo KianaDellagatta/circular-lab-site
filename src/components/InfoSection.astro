@@ -1,8 +1,84 @@
-<div>
-  <h2></h2>
-  <p></p>
-  <p></p>
-  <img src="" alt="" />
-  <h3></h3>
-  <p></p>
+---
+import "/src/styles/style.css";
+---
+
+<div class="BackgroundInfoSection">
+  <h2>Adgang til labbet</h2>
+  <p class="dato">Circular Lab er åbent 8.30-22.00 hver dag.</p>
+  <div class="info-box">
+    <p>
+      Du er velkommen til at benytte lokalet til gruppearbejde eller andet.
+      <strong>Tjek kalenderen</strong> for at se, om der er planlagt undervisning
+      i lokalet.
+    </p>
+
+    <p>
+      Der er adgang til Material Connexion igennem labbet, hvis du gerne vil
+      låne prøverne med i undervisning eller andet – så skriv venligst til
+      <a href="mailto:circular@kea.dk"><strong>circular@kea.dk</strong></a>
+    </p>
+
+    <p>
+      Der vil løbende være udstillinger og cirkulære projekter på display i
+      labbet. Har du yderligere spørgsmål til disse, kan du også række ud til
+      <strong>lab manager Nikolaj Storm</strong>.
+    </p>
+
+    <p>
+      Vi arbejder lige nu at oprette KEAs Cirkulære Materiale bibliotek med gode
+      samarbejdspartnere.<br />
+      Materialerne er på udstilling i labbet. Har du spørgsmål til materialerne,
+      indkøb eller virksomhederne, så tag også fat i <strong
+        >lab manager Nikolaj Storm</strong
+      > for mere information.
+    </p>
+  </div>
+  <img src="public/images/circular-lab-oversigt 1.png" alt="" />
+  <h3>Adresse</h3>
+  <p class="adresse">
+    Circular Lab holder til på Guldbergsgade 29N, bygning A, lokale A129
+  </p>
 </div>
+
+<style>
+  .BackgroundInfoSection {
+    background-color: #5ea8ff;
+  }
+
+  h2 {
+    padding: 3rem 1rem 1rem 1rem; /* top right bottom left */
+  }
+  .dato {
+    padding-top: 0;
+  }
+  p {
+    padding: 1rem;
+  }
+
+  .info-box a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .info-box strong {
+    font-weight: 700;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Optional: crops edges to fill container */
+    border-radius: 1rem; /* Optional: rounded corners */
+    padding: 2rem;
+  }
+
+  h3 {
+    padding: 1rem;
+  }
+
+  .adresse {
+    padding: 0 1rem 3rem 1rem;
+  }
+</style>
