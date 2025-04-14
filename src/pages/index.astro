@@ -1,4 +1,5 @@
 ---
+import Accordion from "../components/Accordion.astro";
 import FeatureSection from "../components/FeatureSection.astro";
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
@@ -21,4 +22,5 @@ const data = await fetch(url, options).then((res) => res.json());
 <Layout>
   <Hero />
   <FeatureSection />
+  <Accordion />
 </Layout>
