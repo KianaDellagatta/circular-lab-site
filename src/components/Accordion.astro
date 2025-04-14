@@ -1,20 +1,134 @@
 ---
-// Accordion.astro
+import "/src/styles/style.css";
+
 const items = [
-  { title: "What is Circular Lab?", content: "Circular Lab is a collaborative initiative for..." },
-  { title: "How does it work?", content: "It works by connecting people with resources..." },
-  { title: "Who is it for?", content: "It's for students, professionals, innovators..." },
-  { title: "Where can I learn more?", content: "You can learn more by visiting our site or attending events." }
+  {
+    title: "Cirkulær vejledning",
+    content:
+      "Sidder du med et projekt/eller forløb, hvor I skal tænke cirkulært?...",
+  },
+  {
+    title: "Cirkulært iværksætteri",
+    content:
+      "Er du iværksætter med din egen virksomhed, eller en del af KEAs Startup Hub...",
+  },
+  {
+    title: "Cirkulære workshops",
+    content:
+      "Er du underviser og har brug for et cirkulært indspark i et forløb eller crash course for dine studerende uanset programområde?..",
+  },
+  {
+    title: "Cirkulære foredrag",
+    content:
+      "Hos Circular Lab holder vi os opdaterede på den nyeste forskning inden for cirkularitet...",
+  },
+  {
+    title: "Circular skills",
+    content:
+      "Der sker rigtig meget inden for cirkularitet netop nu. Derfor holder vi også løbende foredrag og events med relevante...",
+  },
 ];
 ---
 
-<div>
-  <h2></h2>
-  <img src="" alt="" />
-  {items.map(item => (
-      <button class="accordion"> {item.title}</button>
-  <div class="panel">
-    <p>{item.content}</p>
+<div class="BackgroundAccordion">
+  <h2>Hvad Tilbyder Vi?</h2>
+  <img src="/public/images/thelab.png" alt="Accordion visual" />
+
+  <div class="accordion-wrapper">
+    {
+      items.map((item) => (
+        <details class="accordion-item">
+          <summary>
+            <span>{item.title}</span>
+            <span class="accordion-icon" />
+          </summary>
+          <div class="panel">
+            <p>{item.content}</p>
+          </div>
+        </details>
+      ))
+    }
   </div>
-  ))}
+  <p class="harduspørgsmål">
+    Har du spørgsmål, idéer eller et cirkulært projekt, du vil teste i labbet?
+    Skriv til os på <a href="mailto:circular@kea.dk"
+      ><strong>circular@kea.dk</strong></a
+    >.
+  </p>
 </div>
+
+<style>
+  .BackgroundAccordion {
+    background-color: #e4e2dd;
+  }
+
+  h2 {
+    padding: 3rem 1rem 1rem 1rem; /* top right bottom left */
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Optional: crops edges to fill container */
+    padding: 2rem;
+  }
+  .accordion-wrapper {
+    max-width: 600px;
+    margin: 2rem auto;
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 1rem;
+  }
+
+  .accordion-item {
+    border-bottom: 3px solid black;
+    padding: 0.5rem 0;
+  }
+
+  .accordion-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 900;
+    list-style: none;
+    border: none;
+    background: none;
+    padding: 0.75rem 0;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .accordion-item summary::-webkit-details-marker {
+    display: none; /* Hide default arrow */
+  }
+
+  .accordion-icon::after {
+    content: "+";
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .accordion-item[open] .accordion-icon::after {
+    content: "-";
+  }
+  .panel {
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+  .harduspørgsmål {
+    padding: 0 1rem 3rem 1rem;
+  }
+</style>
