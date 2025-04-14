@@ -1,0 +1,20 @@
+---
+// Accordion.astro
+const items = [
+  { title: "What is Circular Lab?", content: "Circular Lab is a collaborative initiative for..." },
+  { title: "How does it work?", content: "It works by connecting people with resources..." },
+  { title: "Who is it for?", content: "It's for students, professionals, innovators..." },
+  { title: "Where can I learn more?", content: "You can learn more by visiting our site or attending events." }
+];
+---
+
+<div>
+  <h2></h2>
+  <img src="" alt="" />
+  {items.map(item => (
+      <button class="accordion"> {item.title}</button>
+  <div class="panel">
+    <p>{item.content}</p>
+  </div>
+  ))}
+</div>
