@@ -50,3 +50,35 @@ p {
   padding-bottom: 0.3rem;
   background: none;
 }
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .cta {
+    font-size: 1.1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .info-box {
+    padding: 3rem;
+    font-size: 1.125rem;
+  }
+}
