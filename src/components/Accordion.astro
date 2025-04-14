@@ -31,52 +31,65 @@ const items = [
 ---
 
 <div class="BackgroundAccordion">
-  <h2>Hvad Tilbyder Vi?</h2>
-  <img src="/public/images/thelab.png" alt="Accordion visual" />
+  <div class="accordion-layout">
+    <div class="accordion-left">
+      <h2>Hvad Tilbyder Vi?</h2>
 
-  <div class="accordion-wrapper">
-    {
-      items.map((item) => (
-        <details class="accordion-item">
-          <summary>
-            <span>{item.title}</span>
-            <span class="accordion-icon" />
-          </summary>
-          <div class="panel">
-            <p>{item.content}</p>
-          </div>
-        </details>
-      ))
-    }
+      <div class="accordion-wrapper">
+        {
+          items.map((item) => (
+            <details class="accordion-item">
+              <summary>
+                <span>{item.title}</span>
+                <span class="accordion-icon" />
+              </summary>
+              <div class="panel">
+                <p>{item.content}</p>
+              </div>
+            </details>
+          ))
+        }
+      </div>
+
+      <p class="harduspørgsmål">
+        Har du spørgsmål, idéer eller et cirkulært projekt, du vil teste i
+        labbet? Skriv til os på <a href="mailto:circular@kea.dk"
+          ><strong>circular@kea.dk</strong></a
+        >.
+      </p>
+    </div>
+
+    <div class="accordion-right">
+      <img src="/images/thelab.png" alt="Accordion visual" />
+    </div>
   </div>
-  <p class="harduspørgsmål">
-    Har du spørgsmål, idéer eller et cirkulært projekt, du vil teste i labbet?
-    Skriv til os på <a href="mailto:circular@kea.dk"
-      ><strong>circular@kea.dk</strong></a
-    >.
-  </p>
 </div>
 
 <style>
   .BackgroundAccordion {
     background-color: #e4e2dd;
+    padding: 2rem 1rem;
+  }
+
+  .accordion-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .accordion-left {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   h2 {
-    padding: 3rem 1rem 1rem 1rem; /* top right bottom left */
+    font-size: 2rem;
+    padding-bottom: 1rem;
   }
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover; /* Optional: crops edges to fill container */
-    padding: 2rem;
-  }
+
   .accordion-wrapper {
-    max-width: 600px;
-    margin: 2rem auto;
     font-family: "Roboto Condensed", sans-serif;
-    padding: 1rem;
   }
 
   .accordion-item {
@@ -91,32 +104,33 @@ const items = [
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: 900;
-    list-style: none;
     border: none;
     background: none;
     padding: 0.75rem 0;
-    text-transform: none;
-    letter-spacing: 0;
   }
 
   .accordion-item summary::-webkit-details-marker {
-    display: none; /* Hide default arrow */
+    display: none;
   }
 
   .accordion-icon::after {
     content: "+";
     font-size: 2rem;
     font-weight: 900;
-    line-height: 1;
   }
 
   .accordion-item[open] .accordion-icon::after {
     content: "-";
   }
+
   .panel {
     padding: 0.75rem 0;
     font-size: 1rem;
     font-weight: 400;
+  }
+
+  .harduspørgsmål {
+    padding-top: 2rem;
   }
 
   a {
@@ -128,7 +142,40 @@ const items = [
   a:hover {
     text-decoration: underline;
   }
-  .harduspørgsmål {
-    padding: 0 1rem 3rem 1rem;
+
+  .accordion-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .accordion-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+
+  /* Desktop styles */
+  @media screen and (min-width: 768px) {
+    .BackgroundAccordion {
+      padding: 4rem;
+    }
+    .accordion-layout {
+      flex-direction: row;
+    }
+
+    .accordion-left {
+      max-width: 600px;
+    }
+
+    .accordion-right {
+      padding-left: 2rem;
+      display: flex;
+    }
+
+    .accordion-right img {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+    }
   }
 </style>
