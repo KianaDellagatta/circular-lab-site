@@ -3,52 +3,107 @@ import "/src/styles/style.css";
 ---
 
 <div class="BackgroundFeature">
-  <h2>Events // Circular Lab</h2>
-  <p>
-    Følg med her i kalenderen og hold dig opdateret på, hvad der sker i Circular
-    Lab. Vejledninger, foredrag, events og lignende vil løbende blive lagt ind i
-    kalenderen.
-  </p>
-  <h3>Circular Lab - Repair Café</h3>
-  <p class="dato">9. April 2025 14:00-16:00</p>
-  <p>
-    Repair Café i Circular Lab hvor vi arbejder med den cirkulære
-    forretningmodel "reparation". På denne workshop har vi fokus på lapning af
-    tekstiler.
-  </p>
-  <button class="cta">SE HELE KALENDEREN</button>
-  <img src="/public/images/reparcafeposter.png" alt="" />
+  <div class="feature-grid">
+    <div class="feature-text">
+      <h2>Events // Circular Lab</h2>
+      <p>
+        Følg med her i kalenderen og hold dig opdateret på, hvad der sker i
+        Circular Lab. Vejledninger, foredrag, events og lignende vil løbende
+        blive lagt ind i kalenderen.
+      </p>
+      <h3>Circular Lab - Repair Café</h3>
+      <p class="dato">9. April 2025 14:00–16:00</p>
+      <p>
+        Repair Café i Circular Lab hvor vi arbejder med den cirkulære
+        forretningmodel "reparation". På denne workshop har vi fokus på lapning
+        af tekstiler.
+      </p>
+      <button class="cta">SE HELE KALENDEREN</button>
+    </div>
+    <div class="feature-image">
+      <img src="/images/reparcafeposter.png" alt="Repair Café Poster" />
+    </div>
+  </div>
 </div>
 
 <style>
   .BackgroundFeature {
     background-color: #ff671f;
-  }
-  h2 {
-    padding: 2rem 1rem 1rem 1rem;
-  }
-  .dato {
-    padding-top: 0;
-  }
-  p {
-    padding: 1rem;
+    padding: 2rem;
   }
 
-  h3 {
-    padding: 1rem;
+  .feature-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .feature-text p,
+  .feature-text h2,
+  .feature-text h3 {
+    padding-bottom: 0.75rem;
   }
 
   .cta {
-    display: block;
-    margin: 0 auto;
+    display: block; /* Makes the button take full line width */
+    margin: 1rem auto; /* Top/bottom = 1rem, left/right = auto (centers it) */
+    border: 2px solid black;
+    background: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
   }
 
-  img {
+  .feature-image img {
+    margin-top: 4rem;
     width: 100%;
     height: auto;
-    display: block;
-    object-fit: cover; /* Optional: crops edges to fill container */
-    border-radius: 1rem; /* Optional: rounded corners */
-    padding: 2rem;
+    max-height: 70%; /* ✅ limits image to 70% of its container */
+    object-fit: contain;
+    border-radius: 1rem;
+  }
+  /* Desktop view */
+  @media screen and (min-width: 768px) {
+    .BackgroundFeature {
+      background-color: #ff671f;
+      padding: 4rem;
+    }
+    .feature-grid {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .feature-text {
+      width: 60%;
+      padding-right: 2rem;
+    }
+
+    .feature-image {
+      width: 35%;
+      display: flex;
+      align-items: center; /* vertically center the image */
+    }
+
+    .feature-image img {
+      margin-top: 4rem;
+      width: 100%;
+      height: auto;
+      max-height: 70%; /* ✅ limits image to 70% of its container */
+      object-fit: contain;
+      border-radius: 1rem;
+    }
+
+    .cta {
+      margin-left: 0;
+    }
+
+    h2 {
+      padding-top: 4rem;
+    }
+    h3 {
+      padding-top: 3rem;
+    }
   }
 </style>
