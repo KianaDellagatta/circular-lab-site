@@ -1,0 +1,31 @@
+---
+//@ts-nocheck
+import Layout from "../layouts/Layout.astro";
+const url = "https://hadmmfptlfanddlnkfpb.supabase.co/rest/v1/Events?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhhZG1tZnB0bGZhbmRkbG5rZnBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc2NTQsImV4cCI6MjA1OTg0MzY1NH0.7rDoX5W9Tlin0X-8Kly1Q8RAdLf4-U1V8EkDNV0mpug";
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => res.json());
+---
+
+<Layout title="forside">
+  <h1>Calendar</h1>
+  {
+    data.map((event) => (
+      <article>
+        <p>{event.event_date}</p>
+        <h2>{event.event_title}</h2>
+        <p>{event.event_description}</p>
+        <p>
+          {event.event_start}-{event.event_end}
+        </p>
+        <a href={`/events/${event.event_slug}`}>læs mere</a>
+      </article>
+    ))
+  }
+</Layout>
