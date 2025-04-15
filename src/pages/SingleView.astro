@@ -23,6 +23,9 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
 ---
 
 <article>
+  <div class="logo">
+    <img src="../public/images/kealogo.svg" alt="KEA Logo" />
+  </div>
   <h1>{event.event_title}</h1>
   <h2>{formattedDate} // {formattedTime}</h2>
   <p>{event.event_description}</p>
@@ -34,3 +37,32 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
     <img src="../public/images/torsdagsbarposter.png" alt="Torsdagsbar Poster" />
   </div>
 </article>
+
+<style>
+  body {
+    background-color: #e4e2dd;
+  }
+  article {
+    color: #ff671f;
+  }
+  .logo {
+    max-width: 10rem;
+    margin: auto;
+    margin-top: 2rem;
+  }
+  a {
+    color: inherit;
+  }
+  h1 {
+    color: #003b5f;
+  }
+
+  p {
+    text-align: center;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
