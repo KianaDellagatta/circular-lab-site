@@ -18,7 +18,13 @@ const data = await fetch(url, options).then((res) => res.json());
   {
     data.map((event) => (
       <article>
-        <p>{event.event_date}</p>
+        <p>
+          {new Date(event.event_date)
+            .toLocaleString("da-DK", { month: "short" })
+            .toUpperCase()}
+          <br />
+          {new Date(event.event_date).getDate()}
+        </p>
         <h2>{event.event_title}</h2>
         <p>{event.event_description}</p>
         <p>
