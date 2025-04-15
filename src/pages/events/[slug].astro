@@ -2,6 +2,7 @@
 //@ts-nocheck
 import "/src/styles/style.css";
 import Layout from "../../layouts/Layout.astro";
+import SingleView from "../SingleView.astro";
 export async function getStaticPaths() {
   const url =
     "https://hadmmfptlfanddlnkfpb.supabase.co/rest/v1/Events?select=*";
@@ -28,5 +29,5 @@ const { event } = Astro.props;
 ---
 
 <Layout title={event.event_title}>
-  <h1>{event.event_title}</h1>
+  <SingleView event={event} />
 </Layout>
