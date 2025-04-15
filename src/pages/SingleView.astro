@@ -12,9 +12,25 @@ const options = {
 
 const data = await fetch(url, options).then((res) => res.json());
 const { event } = Astro.props;
+
+const date = new Date(event.event_date);
+const formattedDate = `${date.getDate()}. ${date.toLocaleString("da-DK", { month: "short" }).toUpperCase()} ${date.getFullYear()}`;
+
+const cleanStart = event.event_start.replace(/:00$/, "");
+const cleanEnd = event.event_end.replace(/:00$/, "");
+
+const formattedTime = `${cleanStart} - ${cleanEnd}`;
 ---
 
 <article>
   <h1>{event.event_title}</h1>
+  <h2>{formattedDate} // {formattedTime}</h2>
   <p>{event.event_description}</p>
+  <h3>{event.event_location}</h3>
+  <button class="cta">
+    Tilmeld dig via <a href="https://www.safeticket.dk" target="_blank" rel="noopener noreferrer" class="link"> safeticket.dk </a>
+  </button>
+  <div class="feature-image">
+    <img src="../public/images/torsdagsbarposter.png" alt="Torsdagsbar Poster" />
+  </div>
 </article>
