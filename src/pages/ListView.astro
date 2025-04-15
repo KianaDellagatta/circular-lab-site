@@ -14,24 +14,153 @@ const data = await fetch(url, options).then((res) => res.json());
 ---
 
 <Layout title="forside">
-  <h1>Calendar</h1>
-  {
-    data.map((event) => (
-      <article>
-        <p>
-          {new Date(event.event_date)
+  <div class="page-background">
+    <h1>Calendar // Circular Lab</h1>
+    <div class="event-grid">
+      {
+        data.map((event) => {
+          const date = new Date(event.event_date);
+          const month = date
             .toLocaleString("da-DK", { month: "short" })
-            .toUpperCase()}
-          <br />
-          {new Date(event.event_date).getDate()}
-        </p>
-        <h2>{event.event_title}</h2>
-        <p>{event.event_description}</p>
-        <p>
-          {event.event_start}-{event.event_end}
-        </p>
-        <a href={`/events/${event.event_slug}`}>læs mere</a>
-      </article>
-    ))
-  }
+            .toUpperCase();
+          const day = date.getDate();
+
+          const cleanStart = event.event_start.replace(/:00$/, "");
+          const cleanEnd = event.event_end.replace(/:00$/, "");
+
+          return (
+            <article class="event-card">
+              <div class="event-date">
+                <span class="month">{month}</span>
+                <span class="day">{day}</span>
+              </div>
+              <h2>{event.event_title}</h2>
+              <p>{event.event_description}</p>
+              <div class="event-footer">
+                <p class="time">
+                  {cleanStart} - {cleanEnd}
+                </p>
+                <a class="read-more" href={`/events/${event.event_slug}`}>
+                  LÆS MERE
+                </a>
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
 </Layout>
+
+<style>
+  body {
+    margin: 0;
+    background-color: #ff7b00;
+  }
+  .page-background {
+    background-color: #ff7b00;
+    padding: 2rem;
+  }
+  .event-card {
+    background: #e4e2dd;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 350px;
+    height: 350px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .event-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* limits text to 3 lines */
+    -webkit-box-orient: vertical;
+  }
+
+  .event-date {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .month {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .day {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  h1 {
+    padding-bottom: 1rem;
+  }
+
+  h2 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .event-footer {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .time {
+    display: block;
+    background: #5ea8ff;
+    color: black;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+  }
+
+  .read-more {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 1.2rem;
+    border: 2px solid black;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: all 0.2s;
+    box-sizing: border-box; /* ensures padding doesn't push past the border */
+  }
+
+  .read-more:hover {
+    background: black;
+    color: white;
+  }
+  .event-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr; /* mobile default */
+  }
+
+  @media (min-width: 768px) {
+    .event-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+  }
+</style>
