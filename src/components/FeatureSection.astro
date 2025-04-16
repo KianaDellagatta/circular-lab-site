@@ -10,7 +10,9 @@ import "/src/styles/style.css";
       <h3>Circular Lab - Repair Café</h3>
       <p class="dato">9. April 2025 14:00-16:00</p>
       <p>Repair Café i Circular Lab hvor vi arbejder...</p>
-      <button class="cta">SE HELE KALENDEREN</button>
+      <a href="/ListView">
+        <button class="cta">SE HELE KALENDEREN</button>
+      </a>
     </div>
     <div class="feature-image">
       <img src="/images/reparcafeposter.png" alt="Repair Café Poster" />
@@ -22,6 +24,9 @@ import "/src/styles/style.css";
 </div>
 
 <style>
+  a {
+    text-decoration: none;
+  }
   .feature-grid {
     display: flex;
     flex-direction: column;
