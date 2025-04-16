@@ -28,12 +28,12 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
   </div>
   <h1>{event.event_title}</h1>
   <h2>{formattedDate} // {formattedTime}</h2>
-  <p>{event.event_description}</p>
-  <h3>{event.event_location}</h3>
+  <p class="desc">{event.event_description}</p>
+  <p class="location">Lokation: <b>{event.event_location}</b></p>
   <button class="cta">
     Tilmeld dig via <a href="https://www.safeticket.dk" target="_blank" rel="noopener noreferrer" class="link"> safeticket.dk </a>
   </button>
-  <div class="feature-image">
+  <div class="poster">
     <img src="../public/images/torsdagsbarposter.png" alt="Torsdagsbar Poster" />
   </div>
 </article>
@@ -41,6 +41,7 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
 <style>
   body {
     background-color: #e4e2dd;
+    text-align: center;
   }
   article {
     color: #ff671f;
@@ -51,18 +52,38 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
     margin-top: 2rem;
   }
   a {
-    color: inherit;
-  }
-  h1 {
     color: #003b5f;
   }
 
+  .cta {
+    color: #003b5f;
+    font-size: 1.7rem;
+  }
+  h1 {
+    color: #003b5f;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
   p {
     text-align: center;
+    padding: 1rem;
+  }
+
+  .desc {
+    margin-top: 1rem;
+  }
+  .location {
+    margin-bottom: 2rem;
   }
   img {
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  .poster {
+    max-width: 20rem;
+    margin: 0 auto;
+    margin-top: 2rem;
   }
 </style>
