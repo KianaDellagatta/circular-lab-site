@@ -4,7 +4,9 @@ import "/src/styles/style.css";
 
 <div class="BackgroundInfoSection">
   <h2>Adgang til labbet</h2>
+  <img src="/images/orangefabric.png" alt="" class="FABRIC" />
   <p class="dato">Circular Lab er åbent 8.30-22.00 hver dag.</p>
+
   <div class="info-box">
     <p>
       Du er velkommen til at benytte lokalet til gruppearbejde eller andet.
@@ -33,7 +35,8 @@ import "/src/styles/style.css";
       > for mere information.
     </p>
   </div>
-  <img src="public/images/circular-lab-oversigt 1.png" alt="" />
+
+  <img src="/images/circular-lab-oversigt 1.png" alt="Lab overview" />
   <h3>Adresse</h3>
   <p class="adresse">
     Circular Lab holder til på Guldbergsgade 29N, bygning A, lokale A129
@@ -43,16 +46,22 @@ import "/src/styles/style.css";
 <style>
   .BackgroundInfoSection {
     background-color: #5ea8ff;
+    position: relative;
   }
 
   h2 {
-    padding: 3rem 1rem 1rem 1rem; /* top right bottom left */
+    padding: 3rem 1rem 1rem 2rem;
   }
+
   .dato {
     padding-top: 0;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
   }
+
   p {
-    padding: 1rem;
+    padding: 0 2rem 0.8rem 2rem;
+    line-height: 2rem;
   }
 
   .info-box a {
@@ -65,24 +74,52 @@ import "/src/styles/style.css";
     font-weight: 700;
   }
 
-  img {
+  img:not(.FABRIC) {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover; /* Optional: crops edges to fill container */
-    border-radius: 1rem; /* Optional: rounded corners */
+    object-fit: cover;
+    border-radius: 1rem;
     padding: 2rem;
   }
 
+  .FABRIC {
+    position: absolute;
+    bottom: -13rem;
+    right: 100px; /* ✅ Fixed position so it doesn’t move */
+    width: 250px;
+    max-width: 400px;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+  }
+
   h3 {
-    padding: 1rem;
+    padding-left: 2rem;
   }
 
   .adresse {
-    padding: 0 1rem 3rem 1rem;
+    padding: 0 1rem 3rem 2rem;
   }
 
-  p {
-    line-height: 2rem;
+  @media screen and (min-width: 768px) {
+    h2 {
+      padding: 3rem 1rem 1rem 3rem;
+    }
+
+    .dato {
+      padding-left: 3rem;
+    }
+
+    .info-box {
+      padding: 1rem;
+    }
+
+    .FABRIC {
+      top: 4rem;
+      right: 100px; /* ✅ Keep it fixed in the same place */
+      bottom: auto;
+      width: 250px;
+    }
   }
 </style>

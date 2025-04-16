@@ -62,6 +62,9 @@ const items = [
     <div class="accordion-right">
       <img src="/images/thelab.png" alt="Accordion visual" />
     </div>
+
+    <!-- Glass image placed at bottom-left of layout -->
+    <img src="/images/glass.png" alt="Decorative glass" class="GLASS" />
   </div>
 </div>
 
@@ -75,6 +78,7 @@ const items = [
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    position: relative; /* Anchor point for .GLASS */
   }
 
   .accordion-left {
@@ -136,6 +140,7 @@ const items = [
   p {
     line-height: 2rem;
   }
+
   a {
     color: black;
     text-decoration: none;
@@ -157,11 +162,23 @@ const items = [
     border-radius: 1rem;
   }
 
+  .GLASS {
+    position: absolute;
+    bottom: -130px;
+    left: -2rem;
+    width: 170px;
+    max-width: 250px;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+  }
+
   /* Desktop styles */
   @media screen and (min-width: 768px) {
     .BackgroundAccordion {
       padding: 4rem;
     }
+
     .accordion-layout {
       flex-direction: row;
     }
@@ -179,6 +196,15 @@ const items = [
       height: 100%;
       width: auto;
       object-fit: cover;
+    }
+
+    .GLASS {
+      bottom: 28rem;
+      left: -7rem;
+      width: 230px;
+    }
+    h2 {
+      font-size: 3rem;
     }
   }
 </style>
