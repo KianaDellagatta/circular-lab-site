@@ -36,6 +36,8 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
   <div class="poster">
     <img src="../public/images/torsdagsbarposter.png" alt="Torsdagsbar Poster" />
   </div>
+  <img src="/images/IMG_9572 1.png" alt="" class="MOSS" />
+  <img src="/images/IMG_9572 1.png" alt="" class="MOSS2" />
 </article>
 
 <style>
@@ -85,5 +87,26 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
     max-width: 20rem;
     margin: 0 auto;
     margin-top: 2rem;
+  }
+
+  .MOSS {
+    position: fixed;
+    top: -14.5rem;
+    right: 0;
+    width: 45%; /* Increase from 35% */
+    max-width: 200px;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+  }
+  .MOSS2 {
+    position: fixed;
+    bottom: -16rem;
+    width: 45%; /* Increase from 35% */
+    max-width: 200px;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+    rotate: 180deg;
   }
 </style>
