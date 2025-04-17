@@ -5,6 +5,7 @@ import "/src/styles/style.css";
 <div class="BackgroundInfoSection">
   <h2>Adgang til labbet</h2>
   <img src="/images/orangefabric.png" alt="" class="FABRIC" />
+  <img src="/public/images/colors.png" alt="" class="COLORS" />
   <p class="dato">Circular Lab er åbent 8.30-22.00 hver dag.</p>
 
   <div class="info-box">
@@ -74,7 +75,7 @@ import "/src/styles/style.css";
     font-weight: 700;
   }
 
-  img:not(.FABRIC) {
+  img:not(.FABRIC):not(.COLORS) {
     width: 100%;
     height: auto;
     display: block;
@@ -85,10 +86,21 @@ import "/src/styles/style.css";
 
   .FABRIC {
     position: absolute;
-    bottom: -13rem;
-    right: 100px; /* ✅ Fixed position so it doesn’t move */
-    width: 250px;
-    max-width: 400px;
+    bottom: -110px;
+    left: -1rem;
+    width: 170px;
+    max-width: 130px;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+  }
+
+  .COLORS {
+    position: absolute;
+    top: -8rem; /* or whatever vertical spot you want */
+    right: 0; /* similar to .FABRIC, but offset a bit more if needed */
+    width: 140px;
+    max-width: 220px;
     z-index: 1;
     pointer-events: none;
     object-fit: contain;
@@ -116,10 +128,18 @@ import "/src/styles/style.css";
     }
 
     .FABRIC {
-      top: 4rem;
+      top: -10rem;
       right: 100px; /* ✅ Keep it fixed in the same place */
       bottom: auto;
       width: 250px;
+      max-width: 200px;
+    }
+
+    .COLORS {
+      top: -8rem;
+      right: 0px;
+      width: 180px;
+      max-width: 220px;
     }
   }
 </style>

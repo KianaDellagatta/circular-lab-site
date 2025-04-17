@@ -3,15 +3,23 @@ import "/src/styles/style.css";
 ---
 
 <footer>
+  <img src="/images/starfish.png" alt="" class="STARFISH" />
+  <img src=" /images/rainbow.png" alt="" class="RAINBOW" />
   <h2>KONTAKT</h2>
   <img src="public/images/kontakt.webp" alt="lab manager" />
   <h3>Nikolaj Storm Hauge Tost</h3>
   <p><b>E: <a href="mailto:nito@kea.dk">nito@kea.dk</a></b></p>
   <div class="socials">
-    <a href="https://www.instagram.com/kea_circularlab?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+    <a
+      href="https://www.instagram.com/kea_circularlab?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    >
       <img src="public/images/instagram.webp" alt="insta logo" />
     </a>
-    <img src="public/images/linkedin.webp" class="linkedin" alt="linkedin logo" />
+    <img
+      src="public/images/linkedin.webp"
+      class="linkedin"
+      alt="linkedin logo"
+    />
   </div>
 </footer>
 
@@ -21,6 +29,7 @@ import "/src/styles/style.css";
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    position: relative;
   }
   h2 {
     text-align: center;
@@ -46,5 +55,26 @@ import "/src/styles/style.css";
 
   .linkedin {
     margin-bottom: 0.1rem;
+  }
+  .STARFISH {
+    position: absolute;
+    left: -0px;
+    bottom: 280px;
+    width: 250px;
+    max-width: 320px;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+  }
+
+  .RAINBOW {
+    position: absolute;
+    top: 0rem; /* or whatever vertical spot you want */
+    right: 0; /* similar to .FABRIC, but offset a bit more if needed */
+    width: 250px;
+    max-width: 250px;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
   }
 </style>
