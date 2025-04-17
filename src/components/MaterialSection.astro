@@ -3,20 +3,26 @@ import "/src/styles/style.css";
 ---
 
 <div class="BackgroundMaterialSection">
-  <h2>Material Connexion</h2>
-  <p>
-    Material ConneXion er et materialebibliotek, hvor du får den nyeste viden indenfor materialer med 500 fysiske prøver og en tilhørende database, som består af 10.000+ materialeprøver indenfor
-    kategorierne polymers, naturals, metals, glass, process, ceramics, cement-based og carbon-based. Det er udvalgte prøver som er innovative, bæredygtige og kommercielt tilgængelige materialer.
-  </p>
-  <p>Husk at besøge det fysiske Material ConneXion-bibliotek på Campus Guldbergsgade!</p>
-  <!-- <b> gør teksten BOLD -->
-  <p>Du kan tilgå den <b>digitale database som studerende og underviser på KEA via KEAs Bibliotek.</b></p>
-  <h3 class="tider">Åbningstider i Material Connexion</h3>
-  <p>Mandag - fredag: kl. 8.30 - 22.00</p>
-  <button class="cta">TILMELD DIG MATERIAL CONNECTION</button>
-  <img src="public/images/Material-connexion-kort 1.png" alt="Material Connexion Map" />
-  <h3>Adresse</h3>
-  <p>Material ConneXion ligger på Guldbergsgade 29N, bygning A, lokale A129. Du finder indgangen igennem biblioteket.</p>
+  <div class="material-wrapper">
+    <div class="content">
+      <h2>Material Connexion</h2>
+      <p>
+        Material ConneXion er et materialebibliotek, hvor du får den nyeste viden indenfor materialer med 500 fysiske prøver og en tilhørende database, som består af 10.000+ materialeprøver indenfor
+        kategorierne polymers, naturals, metals, glass, process, ceramics, cement-based og carbon-based. Det er udvalgte prøver som er innovative, bæredygtige og kommercielt tilgængelige materialer.
+      </p>
+      <p>Husk at besøge det fysiske Material ConneXion-bibliotek på Campus Guldbergsgade!</p>
+      <!-- <b> gør teksten BOLD -->
+      <p>Du kan tilgå den <b>digitale database som studerende og underviser på KEA via KEAs Bibliotek.</b></p>
+      <h3 class="h3_dif">Åbningstider i Material Connexion</h3>
+      <p>Mandag - fredag: kl. 8.30 - 22.00</p>
+      <button class="cta">TILMELD DIG MATERIAL CONNECTION</button>
+    </div>
+    <div class="adgang">
+      <img src="public/images/Material-connexion-kort 1.png" alt="Material Connexion Map" />
+      <h3 class="h3_dif" id="adgangid">Adresse</h3>
+      <p>Material ConneXion ligger på Guldbergsgade 29N, bygning A, lokale A129. Du finder indgangen igennem biblioteket.</p>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -24,6 +30,12 @@ import "/src/styles/style.css";
     background-image: url("/images/materialbackground.png");
     background-size: cover;
     background-position: center;
+    padding: 1rem;
+    padding-bottom: 5rem;
+  }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   h2 {
@@ -33,7 +45,7 @@ import "/src/styles/style.css";
     padding: 1rem;
   }
 
-  .tider {
+  .h3_dif {
     margin-top: 1rem;
     margin-bottom: -1.8rem;
   }
@@ -58,8 +70,49 @@ import "/src/styles/style.css";
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover; /* Optional: crops edges to fill container */
-    border-radius: 1rem; /* Optional: rounded corners */
-    padding: 2rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  /* Responsiv styling ved 800px */
+  @media (min-width: 800px) {
+    .material-wrapper {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr; /* venstre | højre */
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .adgang {
+      display: flex;
+      flex-direction: column; /* Sørg for, at elementerne er i en kolonne */
+      align-items: flex-start; /* Juster elementerne til venstre */
+      order: 2;
+      min-width: 330px;
+      margin-right: 2rem;
+    }
+
+    .cta {
+      margin: 1rem; /* Fjern auto-centrering */
+      text-align: left; /* Sørg for, at teksten i knappen også er venstrejusteret */
+    }
+    #adgangid {
+      padding: 3rem 1rem 1rem 1rem; /* top right bottom left */
+    }
+    .adgang h3,
+    .adgang p {
+      order: 1;
+      text-align: left; /* Juster teksten til venstre */
+      margin: 0 0 0.4rem 0; /* Tilføj lidt afstand mellem elementerne */
+    }
+    .adgang img {
+      order: 2;
+      margin: 1rem 0 0 0; /* Tilføj lidt afstand mellem teksten og billedet */
+      max-width: 400px;
+      align-self: flex-start; /* Sørg for, at billedet også justeres til venstre */
+    }
   }
 </style>
