@@ -3,35 +3,47 @@ import "/src/styles/style.css";
 ---
 
 <div class="BackgroundInfoSection">
-  <h2>Adgang til labbet</h2>
+  <div class="section-header">
+    <h2>Adgang til labbet</h2>
+    <p class="dato">Circular Lab er åbent 8.30-22.00 hver dag.</p>
+  </div>
+
   <img src="/images/orangefabric.png" alt="" class="FABRIC" />
   <img src="/public/images/colors.png" alt="" class="COLORS" />
+
   <div class="info-wrapper">
     <div class="content">
-      <p class="dato">Circular Lab er åbent 8.30-22.00 hver dag.</p>
       <div class="info-box">
         <p>
           Du er velkommen til at benytte lokalet til gruppearbejde eller andet.
-          <strong>Tjek kalenderen</strong> for at se, om der er planlagt undervisning i lokalet.
+          <strong>Tjek kalenderen</strong> for at se, om der er planlagt undervisning
+          i lokalet.
         </p>
         <p>
-          Der er adgang til Material Connexion igennem labbet, hvis du gerne vil låne prøverne med i undervisning eller andet – så skriv venligst til
+          Der er adgang til Material Connexion igennem labbet, hvis du gerne vil
+          låne prøverne med i undervisning eller andet – så skriv venligst til
           <a href="mailto:circular@kea.dk"><strong>circular@kea.dk</strong></a>.
         </p>
         <p>
-          Der vil løbende være udstillinger og cirkulære projekter på display i labbet. Har du yderligere spørgsmål til disse, kan du også række ud til
+          Der vil løbende være udstillinger og cirkulære projekter på display i
+          labbet. Har du yderligere spørgsmål til disse, kan du også række ud
+          til
           <strong>lab manager Nikolaj Storm</strong>.
         </p>
         <p>
-          Vi arbejder lige nu at oprette KEAs Cirkulære Materiale bibliotek med gode samarbejdspartnere. Materialerne er på udstilling i labbet. Har du spørgsmål til materialerne, indkøb eller
-          virksomhederne, så tag også fat i lab manager Nikolaj Storm for mere information.
+          Vi arbejder lige nu at oprette KEAs Cirkulære Materiale bibliotek med
+          gode samarbejdspartnere. Materialerne er på udstilling i labbet. Har
+          du spørgsmål til materialerne, indkøb eller virksomhederne, så tag
+          også fat i lab manager Nikolaj Storm for mere information.
         </p>
       </div>
     </div>
     <div class="adgang">
       <img src="/images/circular-lab-oversigt 1.png" alt="Lab overview" />
       <h3>Adresse</h3>
-      <p class="adresse">Circular Lab holder til på Guldbergsgade 29N, bygning A, lokale A129</p>
+      <p class="adresse">
+        Circular Lab holder til på Guldbergsgade 29N, bygning A, lokale A129
+      </p>
     </div>
   </div>
 </div>
@@ -42,15 +54,29 @@ import "/src/styles/style.css";
     position: relative;
     padding: 1rem;
   }
+
+  .section-header {
+    padding: 0 2rem;
+  }
+
+  h2 {
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+  }
+
   .dato {
-    padding-top: 0;
-    padding-left: 2rem;
-    padding-bottom: 2rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
   }
 
   p {
     padding: 0 2rem 0.8rem 2rem;
     line-height: 2rem;
+  }
+
+  .info-box p {
+    margin-bottom: 1.5rem;
+    max-width: 700px;
   }
 
   .adgang h3,
@@ -62,6 +88,7 @@ import "/src/styles/style.css";
   .adgang p {
     padding-bottom: 3rem;
   }
+
   .info-box a {
     color: black;
     text-decoration: none;
@@ -81,21 +108,23 @@ import "/src/styles/style.css";
     padding: 1rem;
     margin: 0 auto;
   }
+
   .FABRIC {
     position: absolute;
-    bottom: -110px;
-    left: -1rem;
-    width: 170px;
-    max-width: 130px;
+    top: -10rem;
+    left: 0;
+    width: 200px;
+    max-width: 200px;
     z-index: 1;
     pointer-events: none;
     object-fit: contain;
   }
+
   .COLORS {
     position: absolute;
-    top: -8rem; /* or whatever vertical spot you want */
-    right: 0; /* similar to .FABRIC, but offset a bit more if needed */
-    width: 140px;
+    top: -8rem;
+    right: 0;
+    width: 180px;
     max-width: 220px;
     z-index: 1;
     pointer-events: none;
@@ -103,6 +132,9 @@ import "/src/styles/style.css";
   }
 
   @media screen and (min-width: 800px) {
+    .section-header {
+      padding-left: 5rem;
+    }
     .info-wrapper {
       display: grid;
       grid-template-columns: 1.5fr 1fr;
@@ -112,61 +144,41 @@ import "/src/styles/style.css";
 
     .adgang {
       display: flex;
-      flex-direction: column; /* Sørger for, at teksten og billedet stables vertikalt */
-      align-items: flex-start; /* Venstrejusterer indholdet */
-      text-align: left; /* Venstrejusterer teksten */
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
     }
 
     .adgang img {
-      order: 2; /* Sørger for, at billedet vises efter teksten */
-      margin: 0; /* Fjerner unødvendig margin */
+      order: 2;
+      margin: 0;
       max-width: 400px;
-      align-self: center; /* Centrerer billedet vertikalt */
+      align-self: center;
     }
+
     .adgang h3,
     .adgang p {
       order: 1;
       text-align: left;
       margin: 0 0 0.4rem 0;
     }
-  }
 
-  .adgang h3 {
-    margin-top: -3rem;
-  }
+    .adgang h3 {
+      margin-top: -3rem;
+    }
 
-  .adgang p {
-    margin-left: -2rem;
-  }
-  h2 {
-    margin-top: 6rem;
-    margin-left: 5rem;
-  }
-  .dato {
-    margin-left: 3rem;
-  }
-
-  .info-box p {
-    margin-bottom: 1.5rem;
-    max-width: 700px;
-  }
-
-  .adgang img {
-    order: 2;
-    max-width: 400px;
-    align-self: flex-start;
-  }
-  .FABRIC {
-    top: -10rem;
-    right: 100px; /* ✅ Keep it fixed in the same place */
-    bottom: auto;
-    width: 250px;
-    max-width: 200px;
-  }
-  .COLORS {
-    top: -8rem;
-    right: 0px;
-    width: 180px;
-    max-width: 220px;
+    .adgang p {
+      margin-left: -2rem;
+    }
+    .FABRIC {
+      position: absolute;
+      top: -13rem;
+      left: 0;
+      width: 300px;
+      max-width: 300px;
+      z-index: 1;
+      pointer-events: none;
+      object-fit: contain;
+    }
   }
 </style>
