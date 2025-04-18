@@ -30,7 +30,7 @@ import "/src/styles/style.css";
     </div>
     <div class="adgang">
       <img src="/images/circular-lab-oversigt 1.png" alt="Lab overview" />
-      <h3 id="#adresse">Adresse</h3>
+      <h3>Adresse</h3>
       <p class="adresse">Circular Lab holder til på Guldbergsgade 29N, bygning A, lokale A129</p>
     </div>
   </div>
@@ -40,7 +40,7 @@ import "/src/styles/style.css";
   .BackgroundInfoSection {
     background-color: #5ea8ff;
     position: relative;
-    padding-bottom: 4rem;
+    padding: 1rem;
   }
   .dato {
     padding-top: 0;
@@ -53,6 +53,15 @@ import "/src/styles/style.css";
     line-height: 2rem;
   }
 
+  .adgang h3,
+  .adgang p {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .adgang p {
+    padding-bottom: 3rem;
+  }
   .info-box a {
     color: black;
     text-decoration: none;
@@ -63,13 +72,6 @@ import "/src/styles/style.css";
     font-weight: 700;
   }
 
-  #adresse {
-    padding-bottom: 40rem;
-  }
-  .adgang h3,
-  .adgang p {
-    text-align: center;
-  }
   img:not(.FABRIC):not(.COLORS) {
     width: 100%;
     height: auto;
@@ -128,12 +130,10 @@ import "/src/styles/style.css";
       margin: 0 0 0.4rem 0;
     }
   }
-  h2 {
-    padding: 3rem 1rem 1rem 4rem;
-  }
 
-  .dato {
-    padding-left: 4rem;
+  h2 {
+    margin-top: 6rem;
+    margin-left: 2rem;
   }
 
   .info-box p {

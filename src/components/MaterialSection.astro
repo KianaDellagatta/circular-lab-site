@@ -29,7 +29,7 @@ import "/src/styles/style.css";
       background-image: url("/images/materialbackground.png");
       background-size: cover;
       background-position: center;
-      padding: 1rem;
+      padding: 2rem;
       padding-bottom: 5rem;
     }
     .content {
@@ -86,13 +86,16 @@ import "/src/styles/style.css";
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
+      gap: 1rem; /* Reducer afstanden mellem elementerne */
+      margin: 0; /* Fjern unødvendig margin */
+      padding: 0; /* Fjern unødvendig padding */
     }
 
     .adgang h3,
     .adgang p {
-      text-align: center; /* Centrerer teksten */
-      margin: 0 0 1rem 0; /* Tilføjer afstand mellem elementerne */
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
 
     /* Responsiv styling ved 800px */
