@@ -3,24 +3,44 @@ import "/src/styles/style.css";
 ---
 
 <div class="BackgroundMaterialSection">
+  <img src="/public/images/waterbottle.png" alt="" class="WATER" />
+  <img src="/public/images/grass.png" alt="" class="GRASS" />
   <div class="material-wrapper">
     <div class="content">
       <h2>Material Connexion</h2>
       <p>
-        Material ConneXion er et materialebibliotek, hvor du får den nyeste viden indenfor materialer med 500 fysiske prøver og en tilhørende database, som består af 10.000+ materialeprøver indenfor
-        kategorierne polymers, naturals, metals, glass, process, ceramics, cement-based og carbon-based. Det er udvalgte prøver som er innovative, bæredygtige og kommercielt tilgængelige materialer.
+        Material ConneXion er et materialebibliotek, hvor du får den nyeste
+        viden indenfor materialer med 500 fysiske prøver og en tilhørende
+        database, som består af 10.000+ materialeprøver indenfor kategorierne
+        polymers, naturals, metals, glass, process, ceramics, cement-based og
+        carbon-based. Det er udvalgte prøver som er innovative, bæredygtige og
+        kommercielt tilgængelige materialer.
       </p>
-      <p>Husk at besøge det fysiske Material ConneXion-bibliotek på Campus Guldbergsgade!</p>
+      <p>
+        Husk at besøge det fysiske Material ConneXion-bibliotek på Campus
+        Guldbergsgade!
+      </p>
       <!-- <b> gør teksten BOLD -->
-      <p>Du kan tilgå den <b>digitale database som studerende og underviser på KEA via KEAs Bibliotek.</b></p>
+      <p>
+        Du kan tilgå den <b
+          >digitale database som studerende og underviser på KEA via KEAs
+          Bibliotek.</b
+        >
+      </p>
       <h3 class="h3_dif">Åbningstider i Material Connexion</h3>
       <p>Mandag - fredag: kl. 8.30 - 22.00</p>
       <button class="cta">TILMELD DIG MATERIAL CONNECTION</button>
     </div>
     <div class="adgang">
-      <img src="public/images/Material-connexion-kort 1.png" alt="Material Connexion Map" />
+      <img
+        src="public/images/Material-connexion-kort 1.png"
+        alt="Material Connexion Map"
+      />
       <h3 class="h3_dif" id="adgangid">Adresse</h3>
-      <p>Material ConneXion ligger på Guldbergsgade 29N, bygning A, lokale A129. Du finder indgangen igennem biblioteket.</p>
+      <p>
+        Material ConneXion ligger på Guldbergsgade 29N, bygning A, lokale A129.
+        Du finder indgangen igennem biblioteket.
+      </p>
     </div>
   </div>
 
@@ -31,6 +51,7 @@ import "/src/styles/style.css";
       background-position: center;
       padding: 2rem;
       padding-bottom: 5rem;
+      position: relative; /* 👈 Add this line */
     }
     .content {
       max-width: 800px;
@@ -71,7 +92,7 @@ import "/src/styles/style.css";
       transition: ease 0.2s;
     }
 
-    img {
+    img :not(.WATER) {
       width: 100%;
       height: auto;
       display: block;
@@ -96,6 +117,28 @@ import "/src/styles/style.css";
       margin: 0;
       padding: 0;
       text-align: center;
+    }
+
+    .WATER {
+      position: absolute;
+      top: -6rem;
+      left: 0;
+      width: 110px;
+      max-width: 110px;
+      z-index: 1;
+      pointer-events: none;
+      object-fit: contain;
+    }
+
+    .GRASS {
+      position: absolute;
+      top: -8rem;
+      right: 0;
+      width: 150px;
+      max-width: 150px;
+      z-index: 1;
+      pointer-events: none;
+      object-fit: contain;
     }
 
     /* Responsiv styling ved 800px */
@@ -134,6 +177,26 @@ import "/src/styles/style.css";
         margin: 1rem 0 0 0;
         max-width: 400px;
         align-self: flex-start;
+      }
+      .WATER {
+        position: absolute;
+        top: -8.2rem;
+        left: 0;
+        width: 140px;
+        max-width: 140px;
+        z-index: 1;
+        pointer-events: none;
+        object-fit: contain;
+      }
+      .GRASS {
+        position: absolute;
+        top: -10rem;
+        right: 0;
+        width: 180px;
+        max-width: 220px;
+        z-index: 1;
+        pointer-events: none;
+        object-fit: contain;
       }
     }
   </style>
