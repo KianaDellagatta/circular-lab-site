@@ -22,11 +22,15 @@ import "/src/styles/style.css";
           Der vil løbende være udstillinger og cirkulære projekter på display i labbet. Har du yderligere spørgsmål til disse, kan du også række ud til
           <strong>lab manager Nikolaj Storm</strong>.
         </p>
+        <p>
+          Vi arbejder lige nu at oprette KEAs Cirkulære Materiale bibliotek med gode samarbejdspartnere. Materialerne er på udstilling i labbet. Har du spørgsmål til materialerne, indkøb eller
+          virksomhederne, så tag også fat i lab manager Nikolaj Storm for mere information.
+        </p>
       </div>
     </div>
     <div class="adgang">
       <img src="/images/circular-lab-oversigt 1.png" alt="Lab overview" />
-      <h3>Adresse</h3>
+      <h3 id="#adresse">Adresse</h3>
       <p class="adresse">Circular Lab holder til på Guldbergsgade 29N, bygning A, lokale A129</p>
     </div>
   </div>
@@ -36,13 +40,8 @@ import "/src/styles/style.css";
   .BackgroundInfoSection {
     background-color: #5ea8ff;
     position: relative;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
   }
-
-  h2 {
-    padding: 3rem 1rem 1rem 2rem;
-  }
-
   .dato {
     padding-top: 0;
     padding-left: 2rem;
@@ -64,24 +63,22 @@ import "/src/styles/style.css";
     font-weight: 700;
   }
 
-  .adgang {
-    display: flex;
-    flex-direction: column; /* Sørg for, at elementerne er i en kolonne */
-    align-items: flex-start; /* Juster elementerne til venstre */
-    order: 2;
-    min-width: 330px;
-    margin-right: 2rem;
+  #adresse {
+    padding-bottom: 40rem;
   }
-
+  .adgang h3,
+  .adgang p {
+    text-align: center;
+  }
   img:not(.FABRIC):not(.COLORS) {
     width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1rem;
+    margin: 0 auto;
   }
-
   .FABRIC {
     position: absolute;
     bottom: -110px;
@@ -92,7 +89,6 @@ import "/src/styles/style.css";
     pointer-events: none;
     object-fit: contain;
   }
-
   .COLORS {
     position: absolute;
     top: -8rem; /* or whatever vertical spot you want */
@@ -104,53 +100,63 @@ import "/src/styles/style.css";
     object-fit: contain;
   }
 
-  h3 {
-    padding-left: 2rem;
-  }
-
-  .adresse {
-    padding: 0 1rem 3rem 2rem;
-  }
-
   @media screen and (min-width: 800px) {
     .info-wrapper {
       display: grid;
-      grid-template-columns: 1.6fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 2rem;
       align-items: start;
     }
 
-    h2 {
-      padding: 3rem 1rem 1rem 3rem;
-    }
-
-    .dato {
-      padding-left: 3rem;
-    }
-
-    .info-box {
-      padding: 1rem;
+    .adgang {
+      display: flex;
+      flex-direction: column; /* Sørger for, at teksten og billedet stables vertikalt */
+      align-items: flex-start; /* Venstrejusterer indholdet */
+      text-align: left; /* Venstrejusterer teksten */
     }
 
     .adgang img {
-      order: 2;
-      margin: 1rem 0 0 0; /* Tilføj lidt afstand mellem teksten og billedet */
+      order: 2; /* Sørger for, at billedet vises efter teksten */
+      margin: 0; /* Fjerner unødvendig margin */
       max-width: 400px;
-      align-self: flex-start; /* Sørg for, at billedet også justeres til venstre */
+      align-self: center; /* Centrerer billedet vertikalt */
     }
+    .adgang h3,
+    .adgang p {
+      order: 1;
+      text-align: left;
+      margin: 0 0 0.4rem 0;
+    }
+  }
+  h2 {
+    padding: 3rem 1rem 1rem 4rem;
+  }
 
-    .FABRIC {
-      top: -10rem;
-      right: 100px; /* ✅ Keep it fixed in the same place */
-      bottom: auto;
-      width: 250px;
-      max-width: 200px;
-    }
+  .dato {
+    padding-left: 4rem;
+  }
 
-    .COLORS {
-      top: -8rem;
-      right: 0px;
-      width: 180px;
-      max-width: 220px;
-    }
+  .info-box p {
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+  }
+
+  .adgang img {
+    order: 2;
+    max-width: 400px;
+    align-self: flex-start;
+  }
+  .FABRIC {
+    top: -10rem;
+    right: 100px; /* ✅ Keep it fixed in the same place */
+    bottom: auto;
+    width: 250px;
+    max-width: 200px;
+  }
+  .COLORS {
+    top: -8rem;
+    right: 0px;
+    width: 180px;
+    max-width: 220px;
   }
 </style>

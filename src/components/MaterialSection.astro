@@ -79,7 +79,20 @@ import "/src/styles/style.css";
       border-radius: 1rem;
       padding: 1rem;
       margin: 0 auto;
-      max-width: 500px;
+      max-width: 400px;
+    }
+
+    .adgang {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .adgang h3,
+    .adgang p {
+      text-align: center; /* Centrerer teksten */
+      margin: 0 0 1rem 0; /* Tilføjer afstand mellem elementerne */
     }
 
     /* Responsiv styling ved 800px */
@@ -101,8 +114,8 @@ import "/src/styles/style.css";
       }
 
       .cta {
-        margin: 1rem; /* Fjern auto-centrering */
-        text-align: left; /* Sørg for, at teksten i knappen også er venstrejusteret */
+        margin: 1rem;
+        text-align: left;
       }
       #adgangid {
         padding: 3rem 1rem 1rem 1rem; /* top right bottom left */
@@ -110,14 +123,14 @@ import "/src/styles/style.css";
       .adgang h3,
       .adgang p {
         order: 1;
-        text-align: left; /* Juster teksten til venstre */
-        margin: 0 0 0.4rem 0; /* Tilføj lidt afstand mellem elementerne */
+        text-align: left;
+        margin: 0 0 0.4rem 0;
       }
       .adgang img {
         order: 2;
-        margin: 1rem 0 0 0; /* Tilføj lidt afstand mellem teksten og billedet */
+        margin: 1rem 0 0 0;
         max-width: 400px;
-        align-self: flex-start; /* Sørg for, at billedet også justeres til venstre */
+        align-self: flex-start;
       }
     }
   </style>
