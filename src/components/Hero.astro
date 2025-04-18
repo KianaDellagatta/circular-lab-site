@@ -53,13 +53,14 @@ import "/src/styles/style.css";
     color: inherit;
   }
   .cta {
-    margin: auto;
+    margin: 1rem auto; /* Top/bottom = 1rem, left/right = auto (centers it) */
     border: 2px solid black;
+    background: none;
     padding: 0.5rem 1.5rem;
     font-weight: bold;
     cursor: pointer;
     font-family: var(--font-primary);
-    max-width: 200px;
+    font-size: 1.6rem;
   }
 
   .cta:hover {
@@ -69,9 +70,5 @@ import "/src/styles/style.css";
   }
 
   @media (min-width: 800px) {
-    .cta {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-    }
   }
 </style>
