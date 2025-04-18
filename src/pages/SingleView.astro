@@ -22,25 +22,27 @@ const cleanEnd = event.event_end.replace(/:00$/, "");
 const formattedTime = `${cleanStart} - ${cleanEnd}`;
 ---
 
-<article>
-  <div class="logo">
-    <a href="/">
-      <img src="../public/images/kealogo.svg" alt="KEA Logo" />
-    </a>
+<article class="single-view">
+  <div class="content">
+    <div class="logo">
+      <a href="/">
+        <img src="../public/images/kealogo.svg" alt="KEA Logo" />
+      </a>
+    </div>
+    <h1>{event.event_title}</h1>
+    <h2>{formattedDate} // {formattedTime}</h2>
+    <p class="desc">{event.event_description}</p>
+    <p class="location">Lokation: <b>{event.event_location}</b></p>
+    <button class="cta">
+      Tilmeld dig via <a href="https://www.safeticket.dk" target="_blank" rel="noopener noreferrer" class="link"> safeticket.dk </a>
+    </button>
   </div>
-  <h1>{event.event_title}</h1>
-  <h2>{formattedDate} // {formattedTime}</h2>
-  <p class="desc">{event.event_description}</p>
-  <p class="location">Lokation: <b>{event.event_location}</b></p>
-  <button class="cta">
-    Tilmeld dig via <a href="https://www.safeticket.dk" target="_blank" rel="noopener noreferrer" class="link"> safeticket.dk </a>
-  </button>
   <div class="poster">
     <img src="../public/images/torsdagsbarposter.png" alt="Torsdagsbar Poster" />
   </div>
-  <img src="/images/IMG_9572 1.png" alt="" class="MOSS" />
-  <img src="/images/IMG_9572 1.png" alt="" class="MOSS2" />
 </article>
+<img src="/images/IMG_9572 1.png" alt="" class="MOSS" />
+<img src="/images/IMG_9572 1.png" alt="" class="MOSS2" />
 
 <style>
   body {
@@ -50,6 +52,15 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
   article {
     color: #ff671f;
   }
+
+  .single-view {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    padding: 2rem 2rem;
+  }
+
   .logo {
     max-width: 10rem;
     margin: auto;
@@ -70,6 +81,7 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
   }
   p {
     text-align: center;
+    line-height: 1.6rem;
     padding: 1rem;
   }
 
@@ -110,5 +122,37 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
     pointer-events: none;
     object-fit: contain;
     rotate: 180deg;
+  }
+
+  @media (min-width: 800px) {
+    .logo {
+      margin: 0;
+    }
+    .single-view {
+      grid-template-columns: 1fr 1fr; /* Stabel layoutet vertikalt */
+    }
+
+    .content h1,
+    .content h2,
+    .content p {
+      margin-left: 6rem;
+    }
+
+    .poster {
+      margin-top: 10rem;
+    }
+
+    p,
+    h1,
+    h2 {
+      text-align: left;
+    }
+    p {
+      padding: 0;
+    }
+
+    .location {
+      margin-top: 2rem;
+    }
   }
 </style>
