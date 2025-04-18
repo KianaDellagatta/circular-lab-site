@@ -1,0 +1,128 @@
+---
+import "/src/styles/style.css";
+---
+
+<header class="header">
+  <div class="header-top">
+    <!-- Burger-menu -->
+    <div class="burger" id="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="menu nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="/">Praktisk info</a></li>
+        <li><a href="/kalender">Kalender</a></li>
+        <li><a href="/hvad-tilbyder-vi">Hvad tilbyder vi?</a></li>
+        <li><a href="/adgang-til-labbet">Adgang til labbet</a></li>
+        <li><a href="/material-connexion">Material Connexion</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Header styling */
+  .header {
+    position: absolute;
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Top navigation bar */
+  .header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  /* Navigation styling */
+  .nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-list li {
+    display: inline;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .nav-list a:hover {
+    color: #ff671f;
+    border-bottom: #ff671f solid 3px;
+    transition:
+      color 0.2s,
+      border-bottom 0.2s;
+  }
+
+  /* Burger-menu styling */
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile navigation */
+  @media (max-width: 768px) {
+    .burger {
+      display: flex;
+    }
+
+    .nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    .nav.active {
+      display: flex;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav-list a {
+      padding: 0.5rem 1rem;
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
