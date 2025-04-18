@@ -15,6 +15,11 @@ const data = await fetch(url, options).then((res) => res.json());
 
 <Layout title="Calendar">
   <div class="page-background">
+    <img src="/public/images/mannequin.png" alt="" class="MAN" />
+    <img src="/public/images/shoes.png" alt="" class="SHOES" />
+    <img src="/public/images/plasticbottle.png" alt="" class="BOTTLE" />
+    <img src="/public/images/calendarbottle.png" alt="" class="WATER" />
+
     <h1>Calendar // Circular Lab</h1>
     <div class="event-grid">
       {
@@ -57,10 +62,66 @@ const data = await fetch(url, options).then((res) => res.json());
     margin: 0;
     background-color: #ff7b00;
   }
+
   .page-background {
     background-color: #ff7b00;
     padding: 2rem;
+    position: relative;
+    z-index: 0; /* Just in case */
   }
+
+  .MAN {
+    position: fixed;
+    top: 6rem;
+    left: -2rem;
+    width: 250px;
+    max-width: 250px;
+    pointer-events: none;
+    object-fit: contain;
+    z-index: -1; /* 👈 Behind everything inside .page-background */
+  }
+  .SHOES {
+    position: fixed;
+    top: 20rem;
+    right: 8rem;
+    width: 300px;
+    max-width: 300px;
+    pointer-events: none;
+    object-fit: contain;
+    z-index: -1; /* 👈 Behind everything inside .page-background */
+  }
+
+  .BOTTLE {
+    position: fixed;
+    bottom: 0;
+    right: -1rem;
+    width: 250px;
+    max-width: 250px;
+    pointer-events: none;
+    object-fit: contain;
+    z-index: -1; /* 👈 Behind everything inside .page-background */
+  }
+  .WATER {
+    position: fixed;
+    top: 0rem;
+    right: 0rem;
+    width: 250px;
+    max-width: 250px;
+    pointer-events: none;
+    object-fit: contain;
+    z-index: -1; /* 👈 Behind everything inside .page-background */
+  }
+
+  h1 {
+    padding-bottom: 1rem;
+  }
+
+  .event-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr; /* mobile default */
+  }
+
   .event-card {
     background: #e4e2dd;
     padding: 1.5rem;
@@ -104,10 +165,6 @@ const data = await fetch(url, options).then((res) => res.json());
     line-height: 1;
   }
 
-  h1 {
-    padding-bottom: 1rem;
-  }
-
   h2 {
     margin: 0.5rem 0;
     font-size: 1.2rem;
@@ -145,22 +202,58 @@ const data = await fetch(url, options).then((res) => res.json());
     color: black;
     font-weight: bold;
     transition: all 0.2s;
-    box-sizing: border-box; /* ensures padding doesn't push past the border */
+    box-sizing: border-box;
   }
 
   .read-more:hover {
     background: black;
     color: white;
   }
-  .event-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr; /* mobile default */
-  }
 
   @media (min-width: 768px) {
     .event-grid {
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .MAN {
+      position: fixed;
+      top: 20rem;
+      left: -2rem;
+      width: 400px;
+      max-width: 400px;
+      pointer-events: none;
+      object-fit: contain;
+      z-index: -1; /* 👈 Behind everything inside .page-background */
+    }
+    .SHOES {
+      position: fixed;
+      top: 15rem;
+      right: 40rem;
+      width: 400px;
+      max-width: 400rem;
+      pointer-events: none;
+      object-fit: contain;
+      z-index: -1; /* 👈 Behind everything inside .page-background */
+    }
+
+    .BOTTLE {
+      position: fixed;
+      bottom: 0;
+      right: -1rem;
+      width: 350px;
+      max-width: 350px;
+      pointer-events: none;
+      object-fit: contain;
+      z-index: -1; /* 👈 Behind everything inside .page-background */
+    }
+    .WATER {
+      position: fixed;
+      top: 0rem;
+      right: 0rem;
+      width: 250px;
+      max-width: 250px;
+      pointer-events: none;
+      object-fit: contain;
+      z-index: -1; /* 👈 Behind everything inside .page-background */
     }
   }
 </style>
