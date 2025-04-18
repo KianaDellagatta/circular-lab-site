@@ -1,19 +1,21 @@
 ---
 //@ts-nocheck
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
+
 const url = "https://hadmmfptlfanddlnkfpb.supabase.co/rest/v1/Events?select=*";
 const key =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhhZG1tZnB0bGZhbmRkbG5rZnBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc2NTQsImV4cCI6MjA1OTg0MzY1NH0.7rDoX5W9Tlin0X-8Kly1Q8RAdLf4-U1V8EkDNV0mpug";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhhZG1tZnB0bGZhbmRkbG5rZnBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc2NTQsImV4cCI6MjA1OTg0MzY1NH0.7rDoX5W9Tlin0X-8Kly1Q8RAdLf4-U1V8EkDNV0mpug"; // keep your full key
 const options = {
-  headers: {
-    apikey: key,
-  },
+  headers: { apikey: key },
 };
 
-const data = await fetch(url, options).then((res) => res.json());
+const res = await fetch(url, options);
+const json = await res.json();
+console.log("Fetched data:", json); // optional debug
+const data = Array.isArray(json) ? json : [];
 ---
 
-<Layout title="Calendar">
+<Layout title="Upcoming Events">
   <div class="page-background">
     <img src="/public/images/mannequin.png" alt="" class="MAN" />
     <img src="/public/images/shoes.png" alt="" class="SHOES" />
@@ -21,6 +23,7 @@ const data = await fetch(url, options).then((res) => res.json());
     <img src="/public/images/calendarbottle.png" alt="" class="WATER" />
 
     <h1>Calendar // Circular Lab</h1>
+
     <div class="event-grid">
       {
         data.map((event) => {
@@ -29,7 +32,6 @@ const data = await fetch(url, options).then((res) => res.json());
             .toLocaleString("da-DK", { month: "short" })
             .toUpperCase();
           const day = date.getDate();
-
           const cleanStart = event.event_start.replace(/:00$/, "");
           const cleanEnd = event.event_end.replace(/:00$/, "");
 
