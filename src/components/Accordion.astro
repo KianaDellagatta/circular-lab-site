@@ -4,33 +4,49 @@ import "/src/styles/style.css";
 const items = [
   {
     title: "Cirkulær vejledning",
-    content:
-      "Sidder du med et projekt/eller forløb, hvor I skal tænke cirkulært?...",
+    content: `
+      Sidder du med et projekt/eller forløb, hvor I skal tænke cirkulært? Er du i tvivl om, hvordan du designer dine produkter, så de er optimeret til cirkulære forretningsmodeller?
+      Så kom ned i labbet og få råd og vejledning til dit projekt. Vi hjælper både med materialer, design, forretningsmodeller, strategier og alt der skal til for at skabe den bedste cirkularitet – er du i tvivl om vi kan hjælpe med netop din udfordring, så kom forbi og lad os undersøge det sammen.
+    `,
   },
   {
     title: "Cirkulært iværksætteri",
-    content:
-      "Er du iværksætter med din egen virksomhed, eller en del af KEAs Startup Hub...",
+    content: `
+      Er du iværksætter med din egen virksomhed, eller en del af KEAs Startup Hub, og ønsker at undersøge mulighederne for at gøre din virksomhed cirkulær i tråd med ny lovgivning?
+      Book en coaching med Cirkulær lab manager Nikolaj Storm på circular@kea.dk.
+    `,
   },
   {
     title: "Cirkulære workshops",
-    content:
-      "Er du underviser og har brug for et cirkulært indspark i et forløb eller crash course for dine studerende uanset programområde?..",
+    content: `
+     Er du underviser og har brug for et cirkulært indspark i et forløb eller crash course for dine studerende uanset programområde? Er I en gruppe studerende, der ønsker at øge jeres kendskab til cirkularitet og cirkulære forretningsmodeller? Så har vi mulighederne til jer.
+
+Circular Lab har forskellige workshops baseret på materiale fra Regndans, Ellen McArthur Foundation og Dansk Design Center. Vi kan facilitere workshops inden for mange forskellige områder tilknyttet cirkularitet og vi kan skræddersy workshops og foredrag specielt til jeres undervisning/programområde – så både studerende og undervisere bliver klædt godt på til en cirkulær fremtid.
+    `,
   },
   {
     title: "Cirkulære foredrag",
-    content:
-      "Hos Circular Lab holder vi os opdaterede på den nyeste forskning inden for cirkularitet...",
+    content: `
+    
+Hos Circular Lab holder vi os opdaterede på den nyeste forskning inden for cirkularitet. Vi tilbyder foredrag, der inspirerer og giver indsigt i, hvordan cirkularitet kan implementeres i praksis.
+    `,
   },
   {
     title: "Circular skills",
-    content:
-      "Der sker rigtig meget inden for cirkularitet netop nu. Derfor holder vi også løbende foredrag og events med relevante...",
+    content: `
+      Cirkularitet handler om nye forretningsmuligheder – men kræver også mange værktøjer som reparation, opgraderinger, redesigns og meget mere. Vi afholder løbende workshops med forskellige temaer, hvor vi træner cirkulære skills.
+
+Vores workshops er åbne for alle og derfor også en mulighed for at udvide dit cirkulære netværk, men også at få tilegnet nye færdigheder, der måske ligger uden for dit programområde.
+
+Hold dig opdateret i kalenderen med de nyeste events i den kommende fremtid.
+    `,
   },
 ];
 ---
 
 <div class="BackgroundAccordion">
+  <img src="/images/glass.png" alt="Decorative glass" class="GLASS" />
+
   <div class="accordion-layout">
     <div class="accordion-left">
       <h2>Hvad Tilbyder Vi?</h2>
@@ -52,10 +68,7 @@ const items = [
       </div>
 
       <p class="harduspørgsmål">
-        Har du spørgsmål, idéer eller et cirkulært projekt, du vil teste i
-        labbet? Skriv til os på <a href="mailto:circular@kea.dk"
-          ><strong>circular@kea.dk</strong></a
-        >.
+        Har du spørgsmål, idéer eller et cirkulært projekt, du vil teste i labbet? Skriv til os på <a href="mailto:circular@kea.dk"><strong>circular@kea.dk</strong></a>.
       </p>
     </div>
 
@@ -64,21 +77,21 @@ const items = [
     </div>
 
     <!-- Glass image placed at bottom-left of layout -->
-    <img src="/images/glass.png" alt="Decorative glass" class="GLASS" />
   </div>
 </div>
 
 <style>
   .BackgroundAccordion {
+    position: relative; /* Sørg for, at .GLASS forholder sig til denne container */
     background-color: #e4e2dd;
-    padding: 3rem 1rem;
+    padding: 2rem;
   }
 
   .accordion-layout {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    position: relative; /* Anchor point for .GLASS */
+    align-items: flex-start;
   }
 
   .accordion-left {
@@ -160,13 +173,16 @@ const items = [
     max-width: 100%;
     height: auto;
     border-radius: 1rem;
+    object-fit: cover;
+    position: relative;
   }
 
   .GLASS {
-    position: absolute;
-    bottom: -130px;
+    position: static;
+    top: 0;
     left: -2rem;
     width: 170px;
+    margin: -7rem 0 0 -2rem;
     max-width: 250px;
     z-index: 1;
     pointer-events: none;
@@ -174,7 +190,7 @@ const items = [
   }
 
   /* Desktop styles */
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 800px) {
     .BackgroundAccordion {
       padding: 4rem;
     }
@@ -199,9 +215,14 @@ const items = [
     }
 
     .GLASS {
-      bottom: 28rem;
-      left: -7rem;
+      position: absolute;
+      top: -8rem; /* Sørg for, at billedet placeres relativt til .BackgroundAccordion */
+      left: -3rem; /* Juster placeringen i forhold til venstre */
       width: 230px;
+      max-width: 250px;
+      z-index: 1;
+      pointer-events: none;
+      object-fit: contain;
     }
     h2 {
       font-size: 3rem;

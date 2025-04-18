@@ -6,48 +6,37 @@ import "/src/styles/style.css";
   <h2>Adgang til labbet</h2>
   <img src="/images/orangefabric.png" alt="" class="FABRIC" />
   <img src="/public/images/colors.png" alt="" class="COLORS" />
-  <p class="dato">Circular Lab er åbent 8.30-22.00 hver dag.</p>
-
-  <div class="info-box">
-    <p>
-      Du er velkommen til at benytte lokalet til gruppearbejde eller andet.
-      <strong>Tjek kalenderen</strong> for at se, om der er planlagt undervisning
-      i lokalet.
-    </p>
-
-    <p>
-      Der er adgang til Material Connexion igennem labbet, hvis du gerne vil
-      låne prøverne med i undervisning eller andet – så skriv venligst til
-      <a href="mailto:circular@kea.dk"><strong>circular@kea.dk</strong></a>
-    </p>
-
-    <p>
-      Der vil løbende være udstillinger og cirkulære projekter på display i
-      labbet. Har du yderligere spørgsmål til disse, kan du også række ud til
-      <strong>lab manager Nikolaj Storm</strong>.
-    </p>
-
-    <p>
-      Vi arbejder lige nu at oprette KEAs Cirkulære Materiale bibliotek med gode
-      samarbejdspartnere.<br />
-      Materialerne er på udstilling i labbet. Har du spørgsmål til materialerne,
-      indkøb eller virksomhederne, så tag også fat i <strong
-        >lab manager Nikolaj Storm</strong
-      > for mere information.
-    </p>
+  <div class="info-wrapper">
+    <div class="content">
+      <p class="dato">Circular Lab er åbent 8.30-22.00 hver dag.</p>
+      <div class="info-box">
+        <p>
+          Du er velkommen til at benytte lokalet til gruppearbejde eller andet.
+          <strong>Tjek kalenderen</strong> for at se, om der er planlagt undervisning i lokalet.
+        </p>
+        <p>
+          Der er adgang til Material Connexion igennem labbet, hvis du gerne vil låne prøverne med i undervisning eller andet – så skriv venligst til
+          <a href="mailto:circular@kea.dk"><strong>circular@kea.dk</strong></a>.
+        </p>
+        <p>
+          Der vil løbende være udstillinger og cirkulære projekter på display i labbet. Har du yderligere spørgsmål til disse, kan du også række ud til
+          <strong>lab manager Nikolaj Storm</strong>.
+        </p>
+      </div>
+    </div>
+    <div class="adgang">
+      <img src="/images/circular-lab-oversigt 1.png" alt="Lab overview" />
+      <h3>Adresse</h3>
+      <p class="adresse">Circular Lab holder til på Guldbergsgade 29N, bygning A, lokale A129</p>
+    </div>
   </div>
-
-  <img src="/images/circular-lab-oversigt 1.png" alt="Lab overview" />
-  <h3>Adresse</h3>
-  <p class="adresse">
-    Circular Lab holder til på Guldbergsgade 29N, bygning A, lokale A129
-  </p>
 </div>
 
 <style>
   .BackgroundInfoSection {
     background-color: #5ea8ff;
     position: relative;
+    padding-bottom: 5rem;
   }
 
   h2 {
@@ -73,6 +62,15 @@ import "/src/styles/style.css";
 
   .info-box strong {
     font-weight: 700;
+  }
+
+  .adgang {
+    display: flex;
+    flex-direction: column; /* Sørg for, at elementerne er i en kolonne */
+    align-items: flex-start; /* Juster elementerne til venstre */
+    order: 2;
+    min-width: 330px;
+    margin-right: 2rem;
   }
 
   img:not(.FABRIC):not(.COLORS) {
@@ -114,7 +112,13 @@ import "/src/styles/style.css";
     padding: 0 1rem 3rem 2rem;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 800px) {
+    .info-wrapper {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      align-items: start;
+    }
+
     h2 {
       padding: 3rem 1rem 1rem 3rem;
     }
@@ -125,6 +129,13 @@ import "/src/styles/style.css";
 
     .info-box {
       padding: 1rem;
+    }
+
+    .adgang img {
+      order: 2;
+      margin: 1rem 0 0 0; /* Tilføj lidt afstand mellem teksten og billedet */
+      max-width: 400px;
+      align-self: flex-start; /* Sørg for, at billedet også justeres til venstre */
     }
 
     .FABRIC {
