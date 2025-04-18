@@ -3,17 +3,25 @@ import "/src/styles/style.css";
 ---
 
 <div class="backgroundhero">
-  <h1>Circular Lab</h1>
-  <p>
-    Circular Lab er et fælles lab for KEA med fokus på cirkulære
-    forretningsmodeller, design og strategi. Det er åbent for studerende,
-    undervisere og samarbejdspartnere - og samarbejder på tværs af KEAs andre
-    labs.
-  </p>
-  <button class="cta">SE MERE</button>
+  <div class="logo">
+    <a href="/">
+      <img src="../public/images/kealogo.svg" alt="KEA Logo" />
+    </a>
+  </div>
+  <div class="content">
+    <h1>Circular Lab</h1>
+    <p>
+      Circular Lab er et fælles lab for KEA med fokus på cirkulære forretningsmodeller, design og strategi. Det er åbent for studerende, undervisere og samarbejdspartnere - og samarbejder på tværs af
+      KEAs andre labs.
+    </p>
+    <a href="#feature" class="cta">SE MERE</a>
+  </div>
 </div>
 
 <style>
+  .logo {
+    max-width: 10rem;
+  }
   .backgroundhero {
     background-image: url("/images/herobackground.png");
   }
@@ -21,16 +29,43 @@ import "/src/styles/style.css";
     background-image: url("/images/herobackground.png");
     background-size: cover;
     background-position: center;
-    padding: 5rem 2rem;
+    padding: 2rem 2rem;
     text-align: center;
+    height: 100vh;
   }
-
+  .content {
+    margin-top: 10rem;
+  }
   h1 {
     padding-bottom: 1rem;
   }
-
   p {
+    max-width: 780px; /* Begræns bredden af teksten */
+    margin: 0 auto; /* Centrer teksten */
     padding-bottom: 1.4rem;
     line-height: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .cta {
+    margin: auto;
+    border: 2px solid black;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    max-width: 200px;
+  }
+
+  @media (min-width: 800px) {
+    .cta {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
   }
 </style>
