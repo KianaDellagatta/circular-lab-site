@@ -5,11 +5,18 @@ import "/src/styles/style.css";
 <div class="BackgroundFeature relative" id="feature">
   <div class="feature-grid">
     <div class="feature-text">
-      <h2>Events // Circular Lab</h2>
-      <p>Følg med her i kalenderen ...</p>
-      <h3>Circular Lab - Repair Café</h3>
-      <p class="dato">9. April 2025 14:00-16:00</p>
-      <p>Repair Café i Circular Lab hvor vi arbejder...</p>
+      <div class="first-f-text">
+        <h2>Events // Circular Lab</h2>
+        <p>Følg med her i kalenderen og hold dig opdateret på, hvad der sker i Circular Lab. Vejledninger, foredrag, events og lignende vil løbende blive lagt ind i kalenderen.</p>
+      </div>
+      <div class="second-f-text">
+        <h3>Circular Lab - Repair Café</h3>
+        <p class="dato">9. April 2025 14:00-16:00</p>
+        <p>
+          I Circular Lab arbejder vi med cirkulære løsninger. På denne workshop har vi fokus på lapning af tekstiler – kom og lær, hvordan du kan forlænge levetiden på dit tøj med en nål, tråd og lidt
+          kreativitet.
+        </p>
+      </div>
       <a href="/ListView">
         <button class="cta">SE HELE KALENDEREN</button>
       </a>
@@ -37,6 +44,10 @@ import "/src/styles/style.css";
   .feature-text h2,
   .feature-text h3 {
     padding-bottom: 0.75rem;
+  }
+
+  .first-f-text {
+    margin-bottom: 3rem;
   }
 
   .BackgroundFeature {
@@ -81,7 +92,7 @@ import "/src/styles/style.css";
     border-radius: 1rem;
   }
   /* Desktop view */
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 800px) {
     .BackgroundFeature {
       background-color: #ff671f;
       padding: 4rem;
@@ -121,9 +132,6 @@ import "/src/styles/style.css";
       margin-left: 0;
     }
 
-    h2 {
-      padding-top: 4rem;
-    }
     h3 {
       padding-top: 3rem;
     }
