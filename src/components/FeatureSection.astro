@@ -4,36 +4,42 @@ import "/src/styles/style.css";
 
 <div class="BackgroundFeature relative" id="feature">
   <div class="feature-grid">
+    <!-- Venstre kolonne: tekst + knap -->
     <div class="feature-text">
       <div class="first-f-text">
         <h2>Events // Circular Lab</h2>
-        <p>
-          Følg med her i kalenderen og hold dig opdateret på, hvad der sker i
-          Circular Lab. Vejledninger, foredrag, events og lignende vil løbende
-          blive lagt ind i kalenderen.
-        </p>
+        <p>Følg med her i kalenderen og hold dig opdateret på, hvad der sker i Circular Lab. Vejledninger, foredrag, events og lignende vil løbende blive lagt ind i kalenderen.</p>
       </div>
+
       <div class="second-f-text">
         <h3>Circular Lab - Repair Café</h3>
         <p class="dato">9. April 2025 // 14:00 - 16:00</p>
         <p>
-          I Circular Lab arbejder vi med cirkulære løsninger. På denne workshop
-          har vi fokus på lapning af tekstiler – kom og lær, hvordan du kan
-          forlænge levetiden på dit tøj med en nål, tråd og lidt kreativitet.
+          I Circular Lab arbejder vi med cirkulære løsninger. På denne workshop har vi fokus på lapning af tekstiler – kom og lær, hvordan du kan forlænge levetiden på dit tøj med en nål, tråd og lidt
+          kreativitet.
         </p>
       </div>
+
+      <!-- Mobil billede -->
+      <div class="feature-image mobile-img">
+        <img src="/images/reparcafeposter.png" alt="Repair Café Poster" />
+      </div>
+
+      <!-- CTA knap -->
       <a href="/events">
         <button class="cta">SE HELE KALENDEREN</button>
       </a>
     </div>
-    <div class="feature-image">
+
+    <!-- Desktop billede -->
+    <div class="feature-image desktop-img">
       <img src="/images/reparcafeposter.png" alt="Repair Café Poster" />
     </div>
   </div>
-
-  <!-- Decorative moss image -->
-  <img src="/images/IMG_9572 1.png" alt="" class="MOSS" />
 </div>
+
+<!-- Moss dekor -->
+<img src="/images/IMG_9572 1.png" alt="" class="MOSS" />
 
 <style>
   a {
@@ -43,7 +49,13 @@ import "/src/styles/style.css";
   h2 {
     margin-top: 2rem;
   }
+
   .feature-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-text {
     display: flex;
     flex-direction: column;
   }
@@ -60,14 +72,14 @@ import "/src/styles/style.css";
   .BackgroundFeature {
     background-color: #ff671f;
     padding: 2rem;
-    position: relative; /* ✅ Makes absolute child position correctly */
+    position: relative;
   }
 
   .MOSS {
     position: absolute;
     bottom: -12rem;
     right: 0;
-    width: 45%; /* Increase from 35% */
+    width: 45%;
     max-width: 300px;
     z-index: 1;
     pointer-events: none;
@@ -79,8 +91,8 @@ import "/src/styles/style.css";
   }
 
   .cta {
-    display: block; /* Makes the button take full line width */
-    margin: 2rem auto; /* Top/bottom = 1rem, left/right = auto (centers it) */
+    display: block;
+    margin: 2rem auto;
     border: 2px solid black;
     background: none;
     padding: 0.5rem 1.5rem;
@@ -97,25 +109,35 @@ import "/src/styles/style.css";
   }
 
   .feature-image img {
-    margin-top: 4rem;
+    margin-top: 2rem;
     width: 100%;
     height: auto;
-    max-height: 70%; /* ✅ limits image to 70% of its container */
     object-fit: contain;
     border-radius: 1rem;
   }
+
+  /* Billedet i mobilvisning */
+  .mobile-img {
+    display: block;
+  }
+
+  .desktop-img {
+    display: none;
+  }
+
   /* Desktop view */
   @media screen and (min-width: 800px) {
     .BackgroundFeature {
-      background-color: #ff671f;
       padding: 6rem;
     }
+
     .MOSS {
       bottom: -10rem;
       right: 0rem;
       width: 50%;
       max-width: 270px;
     }
+
     .feature-grid {
       flex-direction: row;
       align-items: flex-start;
@@ -127,23 +149,18 @@ import "/src/styles/style.css";
       padding-right: 2rem;
     }
 
-    .feature-image {
+    .desktop-img {
+      display: block;
       width: 35%;
-      display: flex;
-      align-items: center; /* vertically center the image */
     }
 
-    .feature-image img {
-      margin-top: 4rem;
-      width: 100%;
-      height: auto;
-      max-height: 70%; /* ✅ limits image to 70% of its container */
-      object-fit: contain;
-      border-radius: 1rem;
+    .mobile-img {
+      display: none;
     }
 
     .cta {
       margin-left: 0;
+      align-self: flex-start;
     }
 
     h3 {
