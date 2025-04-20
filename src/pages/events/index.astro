@@ -17,6 +17,11 @@ const data = Array.isArray(json) ? json : [];
 
 <Layout title="Upcoming Events">
   <div class="page-background">
+    <div class="logo">
+      <a href="/">
+        <img src="/public/images/kealogohvid.svg" alt="KEA Logo" />
+      </a>
+    </div>
     <img src="/public/images/mannequin.png" alt="" class="MAN" />
     <img src="/public/images/shoes.png" alt="" class="SHOES" />
     <img src="/public/images/plasticbottle.png" alt="" class="BOTTLE" />
@@ -63,6 +68,16 @@ const data = Array.isArray(json) ? json : [];
   body {
     margin: 0;
     background-color: #ff7b00;
+  }
+  .logo {
+    top: 1rem;
+    left: 1rem;
+    width: 80px;
+  }
+
+  .logo img {
+    width: 300%;
+    height: auto;
   }
 
   .page-background {
