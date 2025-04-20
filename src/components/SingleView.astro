@@ -34,21 +34,11 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
     <p class="desc">{event.event_description}</p>
     <p class="location">Lokation: <b>{event.event_location}</b></p>
     <button class="cta">
-      Tilmeld dig via <a
-        href="https://www.safeticket.dk"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="link"
-      >
-        safeticket.dk
-      </a>
+      Tilmeld dig via <a href="https://www.safeticket.dk" target="_blank" rel="noopener noreferrer" class="link"> safeticket.dk </a>
     </button>
   </div>
   <div class="poster">
-    <img
-      src="../public/images/torsdagsbarposter.png"
-      alt="Torsdagsbar Poster"
-    />
+    <img src="../public/images/torsdagsbarposter.png" alt="Torsdagsbar Poster" />
   </div>
 </article>
 <img src="/images/IMG_9572 1.png" alt="" class="MOSS" />
@@ -74,7 +64,6 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
   .logo {
     max-width: 10rem;
     margin: auto;
-    margin-top: 2rem;
   }
   a {
     color: #003b5f;
@@ -83,6 +72,18 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
   .cta {
     color: #003b5f;
     font-size: 1.7rem;
+    max-width: 377px;
+  }
+
+  .cta:hover {
+    background: black;
+    color: white;
+    transition: ease 0.2s;
+  }
+
+  .cta:hover .link {
+    color: white;
+    transition: ease 0.2s;
   }
   h1 {
     color: #003b5f;
@@ -108,7 +109,7 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
   }
 
   .poster {
-    max-width: 20rem;
+    width: 20rem;
     margin: 0 auto;
     margin-top: 2rem;
   }
@@ -141,15 +142,19 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
     .single-view {
       grid-template-columns: 1fr 1fr; /* Stabel layoutet vertikalt */
     }
-
     .content h1,
     .content h2,
     .content p {
       margin-left: 6rem;
     }
 
+    .content .cta {
+      margin-right: 7.5rem;
+    }
+
     .poster {
-      margin-top: 10rem;
+      width: 28rem;
+      margin-top: 4rem;
     }
 
     p,
@@ -160,7 +165,6 @@ const formattedTime = `${cleanStart} - ${cleanEnd}`;
     p {
       padding: 0;
     }
-
     .location {
       margin-top: 2rem;
     }
