@@ -21,16 +21,18 @@ const data = Array.isArray(json) ? json : [];
     <img src="/public/images/shoes.png" alt="" class="SHOES" />
     <img src="/public/images/plasticbottle.png" alt="" class="BOTTLE" />
     <img src="/public/images/calendarbottle.png" alt="" class="WATER" />
-
+    <div class="logo">
+      <a href="/">
+        <img src="../public/images/kealogo.svg" alt="KEA Logo" />
+      </a>
+    </div>
     <h1>Calendar // Circular Lab</h1>
 
     <div class="event-grid">
       {
         data.map((event) => {
           const date = new Date(event.event_date);
-          const month = date
-            .toLocaleString("da-DK", { month: "short" })
-            .toUpperCase();
+          const month = date.toLocaleString("da-DK", { month: "short" }).toUpperCase();
           const day = date.getDate();
           const cleanStart = event.event_start.replace(/:00$/, "");
           const cleanEnd = event.event_end.replace(/:00$/, "");
@@ -65,9 +67,13 @@ const data = Array.isArray(json) ? json : [];
     background-color: #ff7b00;
   }
 
+  .logo {
+    max-width: 12rem;
+  }
+
   .page-background {
     background-color: #ff7b00;
-    padding: 2rem;
+    padding: 2rem 0rem 0rem 5rem;
     position: relative;
     z-index: 0; /* Just in case */
   }
@@ -116,6 +122,7 @@ const data = Array.isArray(json) ? json : [];
 
   h1 {
     padding-bottom: 1rem;
+    font-size: 2.7rem;
   }
 
   .event-grid {
@@ -212,7 +219,12 @@ const data = Array.isArray(json) ? json : [];
     color: white;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
+    .page-background {
+      padding: 0; /* Nulstil padding */
+      padding-left: 1rem;
+      padding-right: 2rem;
+    }
     .event-grid {
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
